@@ -1,6 +1,9 @@
 type StyleMap = { [index: number]: string } | string[]
 
-export class ConsoleStyler {
+/**
+ * Class for styling console logs
+ */
+export class LogStyler {
   private styles: StyleMap
 
   /**
@@ -48,6 +51,6 @@ export class ConsoleStyler {
    * given styles.
    */
   static createTagFunction(styles: StyleMap) {
-    return new ConsoleStyler(styles).tagFn
+    return new LogStyler(styles).tagFn
   }
 }
