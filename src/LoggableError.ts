@@ -6,13 +6,13 @@ import { Loggable, isLoggable } from './Loggable'
 export class LoggableError extends Error {
   name = 'LoggableError'
 
-  constructor(message: string, debugObject: Loggable | Object) {
+  constructor(message: string, debugObject: Loggable<any> | Object) {
     super(LoggableError.formatMessage(message, debugObject))
   }
 
   private static formatMessage(
     message: string,
-    debugObject: Object | Loggable,
+    debugObject: Object | Loggable<any>,
   ): string {
     if (isLoggable(debugObject)) {
       debugObject = debugObject.toLoggableObject()
