@@ -27,10 +27,6 @@ export class Timestamp implements Styleable<TimestampFunction> {
   toLoggableObject() {
     return this.timestampFn
   }
-
-  getStyle() {
-    return this.style
-  }
 }
 
 function createToStringFunction(format: TimestampFormat) {
