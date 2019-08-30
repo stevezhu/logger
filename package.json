@@ -6,9 +6,12 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rm -rf dist/ && tsc",
-    "postinstall": "yarn && yarn build"
+    "test": "jest"
   },
   "devDependencies": {
-    "typescript": "^3.5.3"
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.6.2"
   }
 }
