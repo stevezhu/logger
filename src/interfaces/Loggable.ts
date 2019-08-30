@@ -3,5 +3,7 @@ export interface Loggable<T> {
 }
 
 export function isLoggable(object: any): object is Loggable<any> {
-  return 'toLoggableObject' in object
+  return (
+    object != null && (object as Loggable<any>).toLoggableObject != undefined
+  )
 }
