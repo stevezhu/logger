@@ -4,6 +4,8 @@
     "outDir": "dist/",
     "inlineSourceMap": true,
     "declaration": true,
-    "target": "esnext"
+    "strict": true,
+    "target": "esnext",
+    "module": "commonjs"
   }
 }
