@@ -2,6 +2,7 @@ import { Styleable } from './interfaces/Styleable'
 
 export enum TimestampFormat {
   DateTime,
+  Date,
   Time,
   Offset,
 }
@@ -40,6 +41,8 @@ function createToStringFunction(format: TimestampFormat) {
   switch (format) {
     case TimestampFormat.DateTime:
       return () => new Date(Date.now()).toLocaleString()
+    case TimestampFormat.Date:
+      return () => new Date(Date.now()).toLocaleDateString()
     case TimestampFormat.Time:
       return () => new Date(Date.now()).toLocaleTimeString()
     case TimestampFormat.Offset:
