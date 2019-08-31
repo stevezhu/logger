@@ -6,7 +6,6 @@ export enum TimestampFormat {
   Offset,
 }
 
-
 /**
  * Function that when logged with `%s` in `console.log` will output the return
  * value of the `toString` method.
@@ -25,10 +24,7 @@ export class Timestamp implements Styleable<TimestampFunction> {
   style: string
   timestampFn: TimestampFunction
 
-  constructor(
-    format: TimestampFormat,
-    style: string = 'color: gray; font-style: italic;',
-  ) {
+  constructor(format: TimestampFormat, style: string = '') {
     this.style = style
     this.timestampFn = Object.assign(() => {}, {
       toString: createToStringFunction(format),
