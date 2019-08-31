@@ -1,4 +1,4 @@
-import { Styleable } from './Styleable'
+import { Styleable } from './interfaces/Styleable'
 
 export enum TimestampFormat {
   DateTime,
@@ -6,6 +6,17 @@ export enum TimestampFormat {
   Offset,
 }
 
+
+/**
+ * Function that when logged with `%s` in `console.log` will output the return
+ * value of the `toString` method.
+ *
+ * Eg. The following would output `1`.
+ * ```
+ * let fn: TimestampFunction = { toString: () => 1 }
+ * console.log('%s', fn)
+ * ```
+ */
 interface TimestampFunction extends Function {
   toString: () => string
 }
