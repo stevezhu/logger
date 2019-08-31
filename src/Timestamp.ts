@@ -1,10 +1,10 @@
 import { Styleable } from './interfaces/Styleable'
 
 export enum TimestampFormat {
-  DateTime,
-  Date,
-  Time,
-  Offset,
+  DateTime = 'datetime',
+  Date = 'date',
+  Time = 'time',
+  Offset = 'offset',
 }
 
 /**
