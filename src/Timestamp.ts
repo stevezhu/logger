@@ -39,9 +39,9 @@ export class Timestamp implements Styleable<TimestampFunction> {
 function createToStringFunction(format: TimestampFormat) {
   switch (format) {
     case TimestampFormat.DateTime:
-      return () => new Date().toLocaleString()
+      return () => new Date(Date.now()).toLocaleString()
     case TimestampFormat.Time:
-      return () => new Date().toLocaleTimeString()
+      return () => new Date(Date.now()).toLocaleTimeString()
     case TimestampFormat.Offset:
       let prevTime: number | null = null
       return () => {
