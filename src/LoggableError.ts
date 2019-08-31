@@ -1,4 +1,4 @@
-import { Loggable, isLoggable } from './Loggable'
+import { Loggable, isLoggable } from './interfaces/Loggable'
 
 /**
  * An error for things that are Loggable
@@ -12,7 +12,7 @@ export class LoggableError extends Error {
 
   private static formatMessage(
     message: string,
-    debugObject: Object | Loggable<any>,
+    debugObject: Loggable<any> | Object,
   ): string {
     if (isLoggable(debugObject)) {
       debugObject = debugObject.toLoggableObject()
