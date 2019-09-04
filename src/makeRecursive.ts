@@ -23,7 +23,7 @@ type MapFunction<T> = (...args: NonEmptyArray<any>) => T
  * otherwise returns another recursive function if at least one argument is
  * given.
  */
-type RecursiveFunction<T> = {
+export type RecursiveFunction<T> = {
   (): T
   (...args: NonEmptyArray<any>): RecursiveFunction<T>
 }
