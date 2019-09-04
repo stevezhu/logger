@@ -35,8 +35,8 @@ export const logstyleRecursive = makeRecursive(
     [bInitial, ...bRemaining]: LogInput,
   ): LogInput => {
     const ret: LogInput = [aInitial + bInitial]
-    ret.push(aRemaining)
-    ret.push(bRemaining)
+    ret.push(...aRemaining)
+    ret.push(...bRemaining)
     return ret
   },
 )

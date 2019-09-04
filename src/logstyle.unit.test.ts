@@ -40,3 +40,23 @@ describe('logstyle', () => {
     expect(stream.getContentsAsString()).toBe('The counter is 1\n')
   })
 })
+
+describe('logstyleRecursive', () => {
+  test('with string substitutions', () => {
+    const text1 = createStyleable('This', 'color: gray')
+    const text2 = createStyleable('some', '')
+    const text3 = createStyleable('text', 'color: red')
+    const output = logstyleRecursive`${text1}`` is ${text2} ``${text3}`()
+
+    expect(output).toEqual([
+      '%c%s%c is %s %c%s%c',
+      'color: gray',
+      'This',
+      '',
+      'some',
+      'color: red',
+      'text',
+      '',
+    ])
+  })
+})
