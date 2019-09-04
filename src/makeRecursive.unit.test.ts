@@ -1,7 +1,7 @@
 import { makeRecursive } from './makeRecursive'
 
 describe('makeRecursive', () => {
-  test('addition', () => {
+  test('should make a function recursive correctly', () => {
     const timesTen = (x: number) => x * 10
     const add = (a: number, b: number) => a + b
     const timesTenRecursive = makeRecursive(0, timesTen, add)
