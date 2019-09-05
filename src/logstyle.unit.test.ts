@@ -1,5 +1,3 @@
-import { WritableStreamBuffer } from 'stream-buffers'
-import { Console } from 'console'
 import { createStyleable } from './interfaces/Styleable'
 import { logstyle, logstyleRecursive } from './logstyle'
 
@@ -23,21 +21,19 @@ describe('logstyle', () => {
   })
 
   test('with function substitutions', () => {
-    const stream = new WritableStreamBuffer()
-    const customConsole = new Console({ stdout: stream })
-
     let counter = 0
     const count = Object.assign(() => {}, {
       toString: () => counter++,
     })
-    // can't use any styles here because node doesn't support `%c`
+    // Can't use any styles here because node doesn't support `%c` which is
+    // the substitution token used for styles in the browser.
     const output = logstyle`The counter is ${createStyleable(count, '')}`
 
-    customConsole.log(...output)
-    expect(stream.getContentsAsString()).toBe('The counter is 0\n')
-
-    customConsole.log(...output)
-    expect(stream.getContentsAsString()).toBe('The counter is 1\n')
+    expect((log: LogFunction) => {
+      log(...output)
+      log(...output)
+      log(...output)
+    }).toLog('The counter is 0\nThe counter is 1\nThe counter is 2\n')
   })
 })
 
