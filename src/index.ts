@@ -1,2 +1,2 @@
-export * from './Loggable'
 export * from './LoggableError'
+export * from './Logger'
