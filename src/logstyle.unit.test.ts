@@ -2,6 +2,10 @@ import { createStyleable } from './interfaces/Styleable'
 import { logstyle, logstyleRecursive } from './logstyle'
 
 describe('logstyle', () => {
+  test('with empty template string', () => {
+    expect(logstyle``).toEqual([''])
+  })
+
   test('with string substitutions', () => {
     const text1 = createStyleable('This', 'color: gray')
     const text2 = createStyleable('some', '')
