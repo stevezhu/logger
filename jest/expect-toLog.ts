@@ -13,6 +13,7 @@ declare global {
   }
 }
 
+// TODO add tests
 expect.extend({
   toLog(received: (log: LogFunction) => void, expected: string) {
     const name = 'toLog'
