@@ -1,0 +1,4 @@
+export function isLoggable(object) {
+    return (object != null && object.toLoggableObject != undefined);
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTG9nZ2FibGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvaW50ZXJmYWNlcy9Mb2dnYWJsZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJQSxNQUFNLFVBQVUsVUFBVSxDQUFDLE1BQVc7SUFDcEMsT0FBTyxDQUNMLE1BQU0sSUFBSSxJQUFJLElBQUssTUFBd0IsQ0FBQyxnQkFBZ0IsSUFBSSxTQUFTLENBQzFFLENBQUE7QUFDSCxDQUFDIn0=
