@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
-    "rootDir": "src/",
-    "outDir": "dist/",
+    "rootDir": "./",
     "inlineSourceMap": true,
     "declaration": true,
     "strict": true,
     "target": "esnext",
     "moduleResolution": "node"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["**/*.test.ts"]
+  }
 }
