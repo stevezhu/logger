@@ -1,3 +1,4 @@
+import { LogFunction } from './'
 import { logstyleRecursive as logstyle } from './logstyle'
 import { Styleable, createStyleable } from './interfaces/Styleable'
 import { Timestamp, TimestampFormat } from './Timestamp'

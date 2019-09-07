@@ -1,3 +1,4 @@
+import { LogFunction } from '../src/'
 import { printDiffOrStringify } from 'jest-matcher-utils'
 import { WritableStreamBuffer } from 'stream-buffers'
 import { Console } from 'console'
