@@ -22,10 +22,12 @@ interface TimestampFunction extends Function {
 }
 
 export class Timestamp implements Styleable<TimestampFunction> {
+  format: TimestampFormat
   style: string
   timestampFn: TimestampFunction
 
   constructor(format: TimestampFormat, style: string = '') {
+    this.format = format
     this.style = style
     this.timestampFn = Object.assign(() => {}, {
       toString: createToStringFunction(format),
