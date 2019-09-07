@@ -6,6 +6,8 @@
     "declaration": true,
     "strict": true,
     "target": "esnext",
-    "module": "commonjs"
-  }
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/*.test.ts"]
 }
