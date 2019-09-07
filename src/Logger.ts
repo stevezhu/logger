@@ -17,7 +17,7 @@ const DEFAULT_STYLES = {
   error: 'background-color: red;',
   warn: 'background-color: #ffe000;', // yellow
   info: 'background-color: #66bb6a;', // green
-  debug: 'background-color: gray;',
+  debug: 'background-color: gray;', // #7e57c2 purple
 }
 
 export class Logger {
@@ -33,6 +33,7 @@ export class Logger {
 
   constructor({
     console = globalThis.console,
+    name,
     timestampFormat = TimestampFormat.DateTime,
     styles = DEFAULT_STYLES,
   }: {
