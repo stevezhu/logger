@@ -59,7 +59,10 @@ export class Logger {
   }
 
   private createLogFunction(levelObj: LogLevel): LogFunction {
-    const level = createStyleable<LogLevel>(levelObj, this.styles[levelObj])
+    const level = createStyleable<LogLevel>(
+      levelObj,
+      this.styles.levels + this.styles[levelObj],
+    )
 
     let substitutions = logstyle`${this.timestamp} ${level}`
     if (this.name != null) {
