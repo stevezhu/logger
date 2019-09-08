@@ -14,7 +14,7 @@ const DEFAULT_STYLES = {
   name: 'font-weight: bold',
   timestamp: 'color: gray; font-style: italic;',
 
-  levels: 'color: white; text-transform: uppercase;',
+  levels: 'color: white; text-transform: uppercase; padding: 0 0.4em;',
   error: 'background-color: red;',
   warn: 'background-color: #ffe000;', // yellow
   info: 'background-color: #66bb6a;', // green
