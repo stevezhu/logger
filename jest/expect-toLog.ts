@@ -1,4 +1,3 @@
-import { LogFunction } from '../src/'
 import { printDiffOrStringify } from 'jest-matcher-utils'
 import { WritableStreamBuffer } from 'stream-buffers'
 import { Console } from 'console'
@@ -16,12 +15,11 @@ declare global {
 
 // TODO add tests
 expect.extend({
-  toLog(received: (log: LogFunction) => void, expected: string) {
+  toLog(received: (console: Console) => void, expected: string) {
     const name = 'toLog'
 
     const stream = new WritableStreamBuffer()
-    const log = new Console(stream).log
-    received(log)
+    received(new Console(stream))
     const actual = stream.getContentsAsString()
     const pass = Object.is(actual, expected)
 

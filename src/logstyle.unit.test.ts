@@ -1,4 +1,3 @@
-import { LogFunction } from './'
 import { createStyleable } from './interfaces/Styleable'
 import { logstyle, logstyleRecursive } from './logstyle'
 
@@ -34,10 +33,10 @@ describe('logstyle', () => {
     // the substitution token used for styles in the browser.
     const output = logstyle`The counter is ${createStyleable(count, '')}`
 
-    expect((log: LogFunction) => {
-      log(...output)
-      log(...output)
-      log(...output)
+    expect((console: Console) => {
+      console.log(...output)
+      console.log(...output)
+      console.log(...output)
     }).toLog('The counter is 0\nThe counter is 1\nThe counter is 2\n')
   })
 })
