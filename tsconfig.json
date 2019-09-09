@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "rootDir": "./",
+    "target": "esnext",
+    "moduleResolution": "node",
     "inlineSourceMap": true,
     "declaration": true,
-    "strict": true,
-    "target": "esnext",
-    "moduleResolution": "node"
+    "strict": true
   }
 }
