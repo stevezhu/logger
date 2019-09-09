@@ -59,6 +59,10 @@ export class Logger {
   }
 
   private createLogFunction(levelObj: LogLevel): LogFunction {
+    if (process.env.NODE_ENV == 'test') {
+      return () => {}
+    }
+
     const level = createStyleable<LogLevel>(
       levelObj,
       this.styles.levels + this.styles[levelObj],
