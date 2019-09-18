@@ -1,13 +1,17 @@
 {
-  "name": "@st/logger",
+  "name": "@stevezhu/logger",
   "version": "0.1.5",
   "license": "MIT",
+  "repository": "git://github.com/stevezhu/logger.git",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "rm -rf dist/ && tsc -p tsconfig.browser.json",
     "test": "jest --coverage",
-    "preversion": "yarn build && git add -f dist/"
+    "prepublish": "yarn build"
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
